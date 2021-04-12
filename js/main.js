@@ -6,6 +6,8 @@ let pontuacao = 0;
 let velocidade = 100;
 document.getElementById("pontos").innerText = pontuacao;
 
+
+
 snake[0]  = {
     x: 8 * box,
     y: 8 * box,
@@ -50,10 +52,20 @@ function update(event){
 
 
 function iniciarJogo(){
+
     if(snake[0].x > 15*box && direction == "right") snake[0].x = 0;
     if(snake[0].x < 0 && direction == "left") snake[0].x = 15*box;
     if(snake[0].y > 15*box && direction == "down") snake[0].y = 0;
     if(snake[0].y < 0 && direction == "up") snake[0].y = 15*box;
+
+    for(i=1; i<snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval(jogo);
+            alert('Game Over :(  \nSua pontuação foi '+ pontuacao);
+            pontuacao = 0;
+        }
+    }
+
     criarBG();
     criarCobra();
     drawFood();
