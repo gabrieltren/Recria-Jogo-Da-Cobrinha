@@ -4,7 +4,29 @@
 }
 
 .container {
+    display: flex;
     margin: 0;
-    margin-top: 10%;
-    text-align: center;
+    justify-content: center;
+    padding: 20px;
+}
+.game{
+    margin-top: 15px;
+
+}
+
+.potuacoes {
+   margin: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+}
+.potuacoes div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;;
+}
+
+.potuacoes #pontos {
+    margin-left: 15px;
 }
